@@ -55,7 +55,10 @@ import {CardList} from './class/CardList.js';
   const avatarPopup = new Popup(popupAvatar);
   const imagePopup = new Popup(popupViewImage);
   const userInfo = new UserInfo();
-  const api = new Api('https://praktikum.tk/cohort11', config);
+
+  const apiUrl = NODE_ENV === 'production' ? 'https://praktikum.tk/cohort11' : 'http://praktikum.tk/cohort11';
+
+  const api = new Api(apiUrl, config);
 
   // Ошибки формы
   const errorMessages = {

@@ -25,26 +25,18 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: [
-                            '@babel/preset-env',
-                            {
-                                plugins: [
-                                    '@babel/plugin-proposal-class-properties'
-                                ]
-                            }
-                        ]
-                    }
+                    loader: "babel-loader"
                 }
             },
             {
                 test: /\.css$/i,
-                use: [
-                        (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-                        'css-loader',
-                        'postcss-loader'
-                    ]
+                use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+                    {
+                        loader:'css-loader',
+                        options: {
+                            importLoaders: 2
+                        }
+                    }, 'postcss-loader']
             },
             {
                 test: /\.(png|jpg|gif|ico|svg)$/i,
