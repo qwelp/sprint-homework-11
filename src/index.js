@@ -1,4 +1,15 @@
+import "./pages/index.css";
+
+import {Api} from './class/Api.js';
+import {FormValidator} from './class/FormValidator.js';
+import {Popup} from './class/Popup.js';
+import {UserInfo} from './class/UserInfo.js';
+import {Card} from './class/Card.js';
+import {CardList} from './class/CardList.js';
+
 (function () {
+
+
   const placesList = document.querySelector('.places-list');
 
   const config = {
@@ -155,17 +166,3 @@
     }).catch(err => console.log('ERROR', err.message));
   });
 })();
-
-// ## Итог
-
-// - класс Api реализован согласно поставленной задаче
-// - информация о пользователе  (имя, подпись и аватар) подгружаются с сервера (GET запрос)
-// - имя и о себе можно отредактировать (отправляется PATCH запрос, новые данные)
-// - карточки подгружаются с сервера (GET запрос)
-// - обязательный функционал работает без багов
-// - корректная работа с асинхронным кодом
-// - DOM изменяется только после того, как запрос успешно выполнен
-// - ошибки сервера обрабатываются
-
-
-// Работа принята

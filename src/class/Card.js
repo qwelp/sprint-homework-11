@@ -1,4 +1,6 @@
-class Card {
+
+
+export class Card {
 
   constructor(item, templateCart, viewImage, api, userInfo) {
     this.item = item;
