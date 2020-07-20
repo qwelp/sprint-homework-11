@@ -1,4 +1,4 @@
-class UserInfo {
+export class UserInfo {
 
   setUserInfo(name, job, avatar, id) {
     this.name = name;
